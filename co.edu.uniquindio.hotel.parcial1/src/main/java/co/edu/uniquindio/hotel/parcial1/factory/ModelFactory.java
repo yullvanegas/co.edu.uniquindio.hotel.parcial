@@ -113,6 +113,12 @@ public class ModelFactory implements IClienteCrud, IReservaCrud, IServicioCrud, 
     public boolean eliminarReserva(Habitacion habitacion) {
         return hotel.eliminarReserva(habitacion);
     }
+
+    @Override
+    public String obtenerDatosReserva(LocalDate fechaEntrada) {
+        return hotel.obtenerDatosReserva(fechaEntrada);
+    }
+
     @Override
     public boolean crearServicio(String nombre, int precio) {
         return hotel.crearServicio(nombre, precio);

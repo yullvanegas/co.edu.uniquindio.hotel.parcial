@@ -174,6 +174,27 @@ public class Hotel implements IClienteCrud, IReservaCrud, IServicioCrud, IHabita
             return false;
         }
     }
+
+    @Override
+    public String obtenerDatosReserva(LocalDate fechaEntrada) {
+        Reserva reservaExistente = obtenerReserva(fechaEntrada);
+        if(reservaExistente != null){
+            return reservaExistente.toString();
+        }else {
+            return "no se encontro nada";
+        }
+    }
+    private Reserva obtenerReserva(LocalDate fechaEntrada) {
+        Reserva reservaExistente = null;
+        for(Reserva reserva: getReservas()){
+            if(reserva.getFechaEntrada().equals(fechaEntrada)){
+                reservaExistente = reserva;
+                break;
+            }
+        }
+        return reservaExistente;
+    }
+
     public static HotelBuilder builder(){
         return new HotelBuilder();
     }

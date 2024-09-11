@@ -23,6 +23,13 @@ public class Main {
     private static void crudReserva(ModelFactory modelFactory) {
         crearReserva(modelFactory);
         eliminarReserva(modelFactory);
+        obtenerDatosReserva(modelFactory);
+    }
+
+    private static void obtenerDatosReserva(ModelFactory modelFactory) {
+        LocalDate fechaEntrada = LocalDate.of(2024, 10, 31);
+        String resultado = modelFactory.obtenerDatosReserva(fechaEntrada);
+        System.out.println(resultado);
     }
 
 

@@ -74,4 +74,9 @@ public class Reserva implements IReservaCrud {
         return false;
     }
 
+    @Override
+    public String obtenerDatosReserva(LocalDate fechaEntrada) {
+        return toString();
+    }
+
 }
