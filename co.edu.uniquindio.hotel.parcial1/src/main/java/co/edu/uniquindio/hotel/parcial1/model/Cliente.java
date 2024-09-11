@@ -1,5 +1,7 @@
 package co.edu.uniquindio.hotel.parcial1.model;
 
+import co.edu.uniquindio.hotel.parcial1.builder.ClienteBuilder;
+import co.edu.uniquindio.hotel.parcial1.builder.ReservaBuilder;
 import co.edu.uniquindio.hotel.parcial1.services.IClienteCrud;
 
 public class Cliente implements IClienteCrud {
@@ -37,6 +39,30 @@ public class Cliente implements IClienteCrud {
         this.reserva = reserva;
     }
 
+
+    @Override
+    public boolean crearCliente(String nombre, String id) {
+        return false;
+    }
+
+    @Override
+    public boolean eliminarCliente(String id) {
+        return false;
+    }
+
+    @Override
+    public boolean updateCliente(String nombre, String idActual, String idNuevo) {
+        return false;
+    }
+
+    @Override
+    public String obtenerDatosCliente(String id) {
+        return toString();
+    }
+    public static ClienteBuilder builder(){
+        return new ClienteBuilder();
+    }
+
     @Override
     public String toString() {
         return "Cliente{" +
@@ -44,10 +70,5 @@ public class Cliente implements IClienteCrud {
                 ", id='" + id + '\'' +
                 ", reserva=" + reserva +
                 '}';
-    }
-
-    @Override
-    public boolean crearCliente(String nombre, String id) {
-        return false;
     }
 }

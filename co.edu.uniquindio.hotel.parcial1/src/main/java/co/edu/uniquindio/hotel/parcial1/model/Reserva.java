@@ -1,8 +1,11 @@
 package co.edu.uniquindio.hotel.parcial1.model;
 
+import co.edu.uniquindio.hotel.parcial1.builder.ReservaBuilder;
+import co.edu.uniquindio.hotel.parcial1.services.IReservaCrud;
+
 import java.time.LocalDate;
 
-public class Reserva {
+public class Reserva implements IReservaCrud {
     private LocalDate fechaEntrada;
     private LocalDate fechaSalida;
     private Cliente cliente;
@@ -47,6 +50,10 @@ public class Reserva {
         this.habitacion = habitacion;
     }
 
+    public static ReservaBuilder builder(){
+        return new ReservaBuilder();
+    }
+
     @Override
     public String toString() {
         return "Reserva{" +
@@ -56,4 +63,15 @@ public class Reserva {
                 ", habitacion=" + habitacion +
                 '}';
     }
+
+    @Override
+    public boolean crearReserva(LocalDate fechaEntrada, LocalDate fechaSalida, Cliente cliente, Habitacion habitacion) {
+        return false;
+    }
+
+    @Override
+    public boolean eliminarReserva(Habitacion habitacion) {
+        return false;
+    }
+
 }

@@ -1,6 +1,9 @@
 package co.edu.uniquindio.hotel.parcial1.model;
 
-public class Habitacion {
+import co.edu.uniquindio.hotel.parcial1.builder.HabitacionBuilder;
+import co.edu.uniquindio.hotel.parcial1.services.IHabitacionCrud;
+
+public class Habitacion implements IHabitacionCrud {
     private int numero;
     private int precio;
     private Servicio servicio;
@@ -34,5 +37,38 @@ public class Habitacion {
 
     public void setServicio(Servicio servicio) {
         this.servicio = servicio;
+    }
+
+    public static HabitacionBuilder builder(){
+        return new HabitacionBuilder();
+    }
+
+    @Override
+    public boolean crearHabitacion(int numero, int precio) {
+        return false;
+    }
+
+    @Override
+    public boolean eliminarHabitacion(int numero) {
+        return false;
+    }
+
+    @Override
+    public boolean updateHabitacion(int numero, int precioActual, int precioNuevo) {
+        return false;
+    }
+
+    @Override
+    public String obtenerDatosHabitacion(int numero) {
+        return toString();
+    }
+
+    @Override
+    public String toString() {
+        return "Habitacion{" +
+                "numero=" + numero +
+                ", precio=" + precio +
+                ", servicio=" + servicio +
+                '}';
     }
 }
